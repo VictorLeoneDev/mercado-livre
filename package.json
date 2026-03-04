@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.1"
+  },
+  "name": "mercado-livre",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.2.1"
+  },
+  "scripts": {
+    "dev": "postcss ./src/css/input.css -o ./src/css/output.css --watch",
+    "build": "postcss ./src/css/input.css -o ./src/css/output.css",
+    "start": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dev-EmersonCorreia/Projeto-ecomercer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dev-EmersonCorreia/Projeto-ecomercer/issues"
+  },
+  "homepage": "https://github.com/Dev-EmersonCorreia/Projeto-ecomercer#readme"
+}

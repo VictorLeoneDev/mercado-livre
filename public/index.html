@@ -3,351 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mercado Livre - A melhor plataforma de e-commerce do Brasil">
-    <meta name="keywords" content="compras online, produtos, e-commerce">
-    <title>Mercado Livre - Página Inicial</title>
-    
-    <!-- Stylesheet -->
+    <title>Mercado Livre</title>
     <link rel="stylesheet" href="../src/css/output.css">
 </head>
 
-<body class="bg-gray-50">
+<body>
 
-    <!-- HEADER -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 gap-4 flex-wrap md:flex-nowrap">
-
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="flex items-center">
-                        <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.92/mercadolibre/logo__large_plus.png" 
-                             alt="Mercado Livre"
-                             class="h-12 w-auto">
-                    </a>
-                </div>
-
-                <!-- Search Bar -->
-                <div class="flex-grow min-w-xs md:min-w-md lg:min-w-lg">
-                    <div class="flex items-center">
-                        <input type="text" 
-                               id="searchInput"
-                               placeholder="Buscar produtos, marcas e muito mais..."
-                               class="w-full px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                               aria-label="Busca de produtos">
-                        <button class="px-4 py-2 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 transition font-semibold"
-                                aria-label="Buscar">
-                            🔍
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Auth Links -->
-                <div class="flex gap-3 flex-shrink-0">
-                    <a href="#" class="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition font-semibold text-sm md:text-base">
-                        Entrar
-                    </a>
-                    <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold text-sm md:text-base">
-                        Criar conta
-                    </a>
-                </div>
-
-            </div>
+    <!-- Cabeçalho -->
+    <header class="bg-blue-600 text-white p-4">
+        <div class="max-w-6xl mx-auto">
+            <h1>Mercado Livre</h1>
+            <input type="text" id="searchInput" placeholder="Buscar..." class="w-full p-2 mt-2 text-black">
+            <button onclick="buscar()" class="mt-2 bg-white text-blue-600 px-4 py-2">Buscar</button>
         </div>
     </header>
 
-    <!-- NAVIGATION -->
-    <nav class="bg-white border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ul class="flex flex-wrap gap-4 md:gap-8 py-4 text-sm md:text-base">
-                <li><a href="#" class="text-gray-700 hover:text-blue-600 transition font-semibold">Ofertas</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-600 transition font-semibold">Supermercado</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-600 transition font-semibold">Eletrônicos</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-600 transition font-semibold">Moda</a></li>
-                <li><a href="#" class="text-gray-700 hover:text-blue-600 transition font-semibold">Casa</a></li>
-            </ul>
+    <!-- Categorias -->
+    <div class="bg-gray-200 p-4">
+        <div class="max-w-6xl mx-auto">
+            <button class="categoria-btn bg-gray-400 text-white px-3 py-2 m-1" onclick="mudarCategoria(this)">Eletrônicos</button>
+            <button class="categoria-btn bg-gray-400 text-white px-3 py-2 m-1" onclick="mudarCategoria(this)">Moda</button>
+            <button class="categoria-btn bg-gray-400 text-white px-3 py-2 m-1" onclick="mudarCategoria(this)">Casa</button>
         </div>
-    </nav>
+    </div>
 
-    <!-- BANNER PRINCIPAL -->
-    <section class="bg-gradient-to-r from-blue-600 to-blue-800 py-8 md:py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-white">
-                <h1 class="text-3xl md:text-4xl font-bold mb-2">Bem-vindo ao Mercado Livre</h1>
-                <p class="text-lg md:text-xl">Encontre os melhores produtos com os melhores preços</p>
+    <!-- Produtos -->
+    <main class="max-w-6xl mx-auto p-4">
+        <h2 class="text-2xl font-bold mb-4">Produtos em Destaque</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+            <!-- Produto 1 -->
+            <div class="product bg-white">
+                <span class="desconto">-15%</span>
+                <img src="../imagem/20180522124247.jpg" alt="Notebook" class="w-full h-40 object-cover">
+                <h3 class="font-bold mt-2">Notebook Gamer</h3>
+                <p class="text-sm">⭐⭐⭐⭐⭐</p>
+                <p class="font-bold">R$ 2.999,00</p>
+                <p class="text-sm text-gray-600">de R$ 3.499,00</p>
+                <button onclick="adicionarCarrinho('Notebook')" class="w-full mt-2">Adicionar</button>
             </div>
-        </div>
-    </section>
 
-    <!-- FILTROS E ORDENAÇÃO -->
-    <section class="bg-white border-b border-gray-200 py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap gap-4 items-center justify-between">
-                <div class="flex gap-3 flex-wrap">
-                    <button class="px-4 py-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition font-semibold text-sm">
-                        Eletrônicos
-                    </button>
-                    <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition font-semibold text-sm">
-                        Moda
-                    </button>
-                    <button class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200 transition font-semibold text-sm">
-                        Casa
-                    </button>
-                </div>
-                <select class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
-                    <option>Ordenar por: Relevância</option>
-                    <option>Menor Preço</option>
-                    <option>Maior Preço</option>
-                    <option>Mais Recentes</option>
-                </select>
+            <!-- Produto 2 -->
+            <div class="product bg-white">
+                <span class="desconto">-10%</span>
+                <img src="../imagem/7899653741827.jpg" alt="Smartphone" class="w-full h-40 object-cover">
+                <h3 class="font-bold mt-2">Smartphone</h3>
+                <p class="text-sm">⭐⭐⭐⭐</p>
+                <p class="font-bold">R$ 1.169,00</p>
+                <p class="text-sm text-gray-600">de R$ 1.299,00</p>
+                <button onclick="adicionarCarrinho('Smartphone')" class="w-full mt-2">Adicionar</button>
             </div>
-        </div>
-    </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Produto 3 -->
+            <div class="product bg-white">
+                <span class="desconto">-20%</span>
+                <img src="../imagem/images.jpg" alt="Fone" class="w-full h-40 object-cover">
+                <h3 class="font-bold mt-2">Fone Bluetooth</h3>
+                <p class="text-sm">⭐⭐⭐⭐⭐</p>
+                <p class="font-bold">R$ 159,00</p>
+                <p class="text-sm text-gray-600">de R$ 199,00</p>
+                <button onclick="adicionarCarrinho('Fone')" class="w-full mt-2">Adicionar</button>
+            </div>
 
-            <!-- PRODUTOS SECTION -->
-            <section class="mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Produtos em Destaque</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-
-                    <!-- PRODUTO 1 -->
-                    <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group">
-                        <div class="relative overflow-hidden bg-gray-100 h-48 md:h-56">
-                            <span class="badge badge-discount absolute top-3 right-3 z-10">-15%</span>
-                            <img src="../imagem/20180522124247.jpg" 
-                                 alt="Notebook Gamer"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-sm md:text-base font-semibold text-gray-800 line-clamp-2 mb-2">
-                                Notebook Gamer Razer
-                            </h3>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-yellow-400" aria-label="5 estrelas">★★★★★</span>
-                                <span class="text-xs text-gray-500">(124 avaliações)</span>
-                            </div>
-                            <p class="text-lg md:text-2xl font-bold text-gray-900 mb-1">
-                                R$ 2.999,00
-                            </p>
-                            <p class="text-sm text-gray-500 line-through mb-2">
-                                R$ 3.499,00
-                            </p>
-                            <p class="text-sm text-green-600 font-semibold mb-3">
-                                ✓ Frete grátis
-                            </p>
-                            <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </article>
-
-                    <!-- PRODUTO 2 -->
-                    <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group">
-                        <div class="relative overflow-hidden bg-gray-100 h-48 md:h-56">
-                            <span class="badge badge-discount absolute top-3 right-3 z-10">-10%</span>
-                            <img src="../imagem/7899653741827.jpg" 
-                                 alt="Smartphone"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-sm md:text-base font-semibold text-gray-800 line-clamp-2 mb-2">
-                                Smartphone Macqueen
-                            </h3>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-yellow-400" aria-label="4 estrelas">★★★★☆</span>
-                                <span class="text-xs text-gray-500">(89 avaliações)</span>
-                            </div>
-                            <p class="text-lg md:text-2xl font-bold text-gray-900 mb-1">
-                                R$ 1.169,00
-                            </p>
-                            <p class="text-sm text-gray-500 line-through mb-2">
-                                R$ 1.299,00
-                            </p>
-                            <p class="text-sm text-green-600 font-semibold mb-3">
-                                ✓ Frete grátis
-                            </p>
-                            <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </article>
-
-                    <!-- PRODUTO 3 -->
-                    <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group">
-                        <div class="relative overflow-hidden bg-gray-100 h-48 md:h-56">
-                            <span class="badge badge-discount absolute top-3 right-3 z-10">-20%</span>
-                            <img src="../imagem/images.jpg" 
-                                 alt="Fone Bluetooth"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-sm md:text-base font-semibold text-gray-800 line-clamp-2 mb-2">
-                                Fone Bluetooth Hello Kitty
-                            </h3>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-yellow-400" aria-label="5 estrelas">★★★★★</span>
-                                <span class="text-xs text-gray-500">(45 avaliações)</span>
-                            </div>
-                            <p class="text-lg md:text-2xl font-bold text-gray-900 mb-1">
-                                R$ 159,00
-                            </p>
-                            <p class="text-sm text-gray-500 line-through mb-2">
-                                R$ 199,00
-                            </p>
-                            <p class="text-sm text-green-600 font-semibold mb-3">
-                                ✓ Frete grátis
-                            </p>
-                            <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </article>
-
-                    <!-- PRODUTO 4 -->
-                    <article class="bg-white rounded-lg shadow-md hover:shadow-xl transition overflow-hidden cursor-pointer group">
-                        <div class="relative overflow-hidden bg-gray-100 h-48 md:h-56">
-                            <span class="badge badge-discount absolute top-3 right-3 z-10">-5%</span>
-                            <img src="../imagem/7193592_ra.avif" 
-                                 alt="Smart TV"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        </div>
-                        <div class="p-4">
-                            <h3 class="text-sm md:text-base font-semibold text-gray-800 line-clamp-2 mb-2">
-                                BaTV 4K HD 55 polegadas
-                            </h3>
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="text-yellow-400" aria-label="5 estrelas">★★★★★</span>
-                                <span class="text-xs text-gray-500">(256 avaliações)</span>
-                            </div>
-                            <p class="text-lg md:text-2xl font-bold text-gray-900 mb-1">
-                                R$ 9.689,00
-                            </p>
-                            <p class="text-sm text-gray-500 line-through mb-2">
-                                R$ 10.199,00
-                            </p>
-                            <p class="text-sm text-green-600 font-semibold mb-3">
-                                ✓ Frete grátis
-                            </p>
-                            <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold text-sm">
-                                Adicionar ao Carrinho
-                            </button>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-
-            <!-- SEÇÃO DE CATEGORIAS -->
-            <section class="mt-12 mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Categorias Populares</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-                    <div class="category-box">
-                        <div class="category-icon">📱</div>
-                        <p class="category-name">Eletrônicos</p>
-                    </div>
-                    <div class="category-box">
-                        <div class="category-icon">👗</div>
-                        <p class="category-name">Moda</p>
-                    </div>
-                    <div class="category-box">
-                        <div class="category-icon">🏠</div>
-                        <p class="category-name">Casa</p>
-                    </div>
-                    <div class="category-box">
-                        <div class="category-icon">⚽</div>
-                        <p class="category-name">Esportes</p>
-                    </div>
-                    <div class="category-box">
-                        <div class="category-icon">📚</div>
-                        <p class="category-name">Livros</p>
-                    </div>
-                    <div class="category-box">
-                        <div class="category-icon">🍽️</div>
-                        <p class="category-name">Alimentos</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SEÇÃO DE DESTAQUES -->
-            <section class="mt-12 mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Por que comprar conosco?</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="feature-box">
-                        <div class="feature-icon">✓</div>
-                        <h3 class="feature-title">Frete Grátis</h3>
-                        <p class="feature-description">Frete grátis em pedidos acima de R$ 100</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">🛡️</div>
-                        <h3 class="feature-title">Segurança</h3>
-                        <p class="feature-description">Compra segura com proteção de dados</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">🔄</div>
-                        <h3 class="feature-title">Devoluções</h3>
-                        <p class="feature-description">Até 30 dias para devolver</p>
-                    </div>
-                    <div class="feature-box">
-                        <div class="feature-icon">💬</div>
-                        <h3 class="feature-title">Suporte</h3>
-                        <p class="feature-description">Atendimento 24/7 disponível</p>
-                    </div>
-                </div>
-            </section>
+            <!-- Produto 4 -->
+            <div class="product bg-white">
+                <span class="desconto">-5%</span>
+                <img src="../imagem/7193592_ra.avif" alt="TV" class="w-full h-40 object-cover">
+                <h3 class="font-bold mt-2">Smart TV 55"</h3>
+                <p class="text-sm">⭐⭐⭐⭐⭐</p>
+                <p class="font-bold">R$ 1.850,00</p>
+                <p class="text-sm text-gray-600">de R$ 1.950,00</p>
+                <button onclick="adicionarCarrinho('TV')" class="w-full mt-2">Adicionar</button>
+            </div>
 
         </div>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-900 text-gray-300 py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h4 class="text-white font-bold mb-4">Sobre Nós</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white transition">Quem Somos</a></li>
-                        <li><a href="#" class="hover:text-white transition">Carreira</a></li>
-                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Atendimento</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white transition">Contato</a></li>
-                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
-                        <li><a href="#" class="hover:text-white transition">Suporte</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white transition">Privacidade</a></li>
-                        <li><a href="#" class="hover:text-white transition">Termos</a></li>
-                        <li><a href="#" class="hover:text-white transition">Cookies</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Redes Sociais</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#" class="hover:text-white transition">Facebook</a></li>
-                        <li><a href="#" class="hover:text-white transition">Instagram</a></li>
-                        <li><a href="#" class="hover:text-white transition">Twitter</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 pt-8 text-center">
-                <p class="text-sm">
-                    © 2026 Mercado Livre - Projeto Educacional | Desenvolvido com ❤️
-                </p>
-            </div>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+        <div class="max-w-6xl mx-auto text-center">
+            <p>&copy; 2026 Mercado Livre - Todos os direitos reservados</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="../src/js/app.js"></script>
-
 </body>
 </html>

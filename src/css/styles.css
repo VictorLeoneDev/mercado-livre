@@ -1,66 +1,58 @@
 @import "tailwindcss";
 
-/* ========================================
-   MERCADO LIVRE - ESTILOS CUSTOMIZADOS BÁSICOS
-   ======================================== */
-
-html {
-  scroll-behavior: smooth;
+/* Estilos Básicos */
+* {
+  margin: 0;
+  padding: 0;
 }
 
-/* ========================================
-   CARTÕES DE PRODUTOS
-   ======================================== */
-
-.product-card {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: box-shadow 0.3s ease;
+body {
+  font-family: Arial, sans-serif;
 }
 
-.product-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+/* Cartão de Produto */
+.product {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
 }
 
-/* ========================================
-   BADGES (ETIQUETAS)
-   ======================================== */
+.product:hover {
+  box-shadow: 0 2px 5px #999;
+}
 
-.badge {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 4px;
+/* Badge de Desconto */
+.desconto {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
   font-size: 12px;
   font-weight: bold;
 }
 
-.badge-discount {
-  background-color: rgb(220, 38, 38);
-  color: white;
-}
-
-/* ========================================
-   BOTÕES
-   ======================================== */
-
+/* Botão */
 button {
-  transition: all 0.3s ease;
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button:hover {
-  transform: translateY(-2px);
+  background-color: #1d4ed8;
 }
 
-/* ========================================
-   INPUTS/FORMULÁRIOS
-   ======================================== */
-
-input:focus {
-  outline: none;
+/* Input */
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-select:focus {
-  outline: none;
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

@@ -7,82 +7,157 @@
     <link rel="stylesheet" href="../src/css/output.css">
 </head>
 
-<body>
+<body class="bg-gray-100">
 
-    <!-- Cabeçalho -->
-    <header class="bg-blue-600 text-white p-4">
+    <!-- HEADER -->
+    <header class="bg-blue-600 text-white p-4 shadow-lg sticky top-0 z-10">
         <div class="max-w-6xl mx-auto">
-            <h1>Mercado Livre</h1>
-            <input type="text" id="searchInput" placeholder="Buscar..." class="w-full p-2 mt-2 text-black">
-            <button onclick="buscar()" class="mt-2 bg-white text-blue-600 px-4 py-2">Buscar</button>
+            <h1 class="text-3xl font-bold mb-4">Mercado Livre</h1>
+            <div class="flex gap-2">
+                <input type="text" 
+                       id="searchInput" 
+                       placeholder="O que você procura?" 
+                       class="flex-1 p-3 text-gray-800 rounded">
+                <button onclick="buscar()" class="bg-white text-blue-600 px-6 py-3 rounded font-bold hover:bg-gray-100">
+                    Buscar
+                </button>
+            </div>
         </div>
     </header>
 
-    <!-- Categorias -->
-    <div class="bg-gray-200 p-4">
-        <div class="max-w-6xl mx-auto">
-            <button class="categoria-btn bg-gray-400 text-white px-3 py-2 m-1" onclick="mudarCategoria(this)">Eletrônicos</button>
-            <button class="categoria-btn bg-gray-400 text-white px-3 py-2 m-1" onclick="mudarCategoria(this)">Moda</button>
-            <button class="categoria-btn bg-gray-400 text-white px-3 py-2 m-1" onclick="mudarCategoria(this)">Casa</button>
+    <!-- CATEGORIAS -->
+    <nav class="bg-white border-b border-gray-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-wrap gap-2 py-3">
+                <button class="categoria-btn bg-gray-200 text-gray-800 px-4 py-2 rounded font-semibold hover:bg-blue-200 transition" 
+                        onclick="mudarCategoria(this)">
+                    Eletrônicos
+                </button>
+                <button class="categoria-btn bg-gray-200 text-gray-800 px-4 py-2 rounded font-semibold hover:bg-blue-200 transition" 
+                        onclick="mudarCategoria(this)">
+                    Moda
+                </button>
+                <button class="categoria-btn bg-gray-200 text-gray-800 px-4 py-2 rounded font-semibold hover:bg-blue-200 transition" 
+                        onclick="mudarCategoria(this)">
+                    Casa
+                </button>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Produtos -->
-    <main class="max-w-6xl mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-4">Produtos em Destaque</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <!-- BANNER -->
+    <section class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-8 mb-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-2">Os Melhores Produtos</h2>
+            <p class="text-lg">Encontre tudo que você precisa com os melhores preços</p>
+        </div>
+    </section>
+
+    <!-- PRODUTOS -->
+    <main class="max-w-6xl mx-auto px-4 pb-12">
+        <h2 class="text-2xl font-bold mb-6">Produtos em Destaque</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <!-- Produto 1 -->
-            <div class="product bg-white">
-                <span class="desconto">-15%</span>
-                <img src="../imagem/20180522124247.jpg" alt="Notebook" class="w-full h-40 object-cover">
-                <h3 class="font-bold mt-2">Notebook Gamer</h3>
-                <p class="text-sm">⭐⭐⭐⭐⭐</p>
-                <p class="font-bold">R$ 2.999,00</p>
-                <p class="text-sm text-gray-600">de R$ 3.499,00</p>
-                <button onclick="adicionarCarrinho('Notebook')" class="w-full mt-2">Adicionar</button>
+            <div class="product bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+                <div class="relative">
+                    <img src="../imagem/20180522124247.jpg" alt="Notebook" class="w-full h-48 object-cover">
+                    <span class="desconto">-15%</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">Notebook Gamer</h3>
+                    <div class="text-yellow-500 mb-2 text-sm">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 text-sm mb-2">Processador rápido, 16GB RAM</p>
+                    <p class="font-bold text-2xl text-blue-600 mb-1">R$ 2.999,00</p>
+                    <p class="text-gray-500 text-sm line-through mb-3">R$ 3.499,00</p>
+                    <button onclick="adicionarCarrinho('Notebook Gamer')" 
+                            class="w-full bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
 
             <!-- Produto 2 -->
-            <div class="product bg-white">
-                <span class="desconto">-10%</span>
-                <img src="../imagem/7899653741827.jpg" alt="Smartphone" class="w-full h-40 object-cover">
-                <h3 class="font-bold mt-2">Smartphone</h3>
-                <p class="text-sm">⭐⭐⭐⭐</p>
-                <p class="font-bold">R$ 1.169,00</p>
-                <p class="text-sm text-gray-600">de R$ 1.299,00</p>
-                <button onclick="adicionarCarrinho('Smartphone')" class="w-full mt-2">Adicionar</button>
+            <div class="product bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+                <div class="relative">
+                    <img src="../imagem/7899653741827.jpg" alt="Smartphone" class="w-full h-48 object-cover">
+                    <span class="desconto">-10%</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">Smartphone Premium</h3>
+                    <div class="text-yellow-500 mb-2 text-sm">⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 text-sm mb-2">Câmera 48MP, Bateria 5000mAh</p>
+                    <p class="font-bold text-2xl text-blue-600 mb-1">R$ 1.169,00</p>
+                    <p class="text-gray-500 text-sm line-through mb-3">R$ 1.299,00</p>
+                    <button onclick="adicionarCarrinho('Smartphone')" 
+                            class="w-full bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
 
             <!-- Produto 3 -->
-            <div class="product bg-white">
-                <span class="desconto">-20%</span>
-                <img src="../imagem/images.jpg" alt="Fone" class="w-full h-40 object-cover">
-                <h3 class="font-bold mt-2">Fone Bluetooth</h3>
-                <p class="text-sm">⭐⭐⭐⭐⭐</p>
-                <p class="font-bold">R$ 159,00</p>
-                <p class="text-sm text-gray-600">de R$ 199,00</p>
-                <button onclick="adicionarCarrinho('Fone')" class="w-full mt-2">Adicionar</button>
+            <div class="product bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+                <div class="relative">
+                    <img src="../imagem/images.jpg" alt="Fone" class="w-full h-48 object-cover">
+                    <span class="desconto">-20%</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">Fone Bluetooth</h3>
+                    <div class="text-yellow-500 mb-2 text-sm">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 text-sm mb-2">Som cristalino, 30h autonomia</p>
+                    <p class="font-bold text-2xl text-blue-600 mb-1">R$ 159,00</p>
+                    <p class="text-gray-500 text-sm line-through mb-3">R$ 199,00</p>
+                    <button onclick="adicionarCarrinho('Fone Bluetooth')" 
+                            class="w-full bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
 
             <!-- Produto 4 -->
-            <div class="product bg-white">
-                <span class="desconto">-5%</span>
-                <img src="../imagem/7193592_ra.avif" alt="TV" class="w-full h-40 object-cover">
-                <h3 class="font-bold mt-2">Smart TV 55"</h3>
-                <p class="text-sm">⭐⭐⭐⭐⭐</p>
-                <p class="font-bold">R$ 1.850,00</p>
-                <p class="text-sm text-gray-600">de R$ 1.950,00</p>
-                <button onclick="adicionarCarrinho('TV')" class="w-full mt-2">Adicionar</button>
+            <div class="product bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition">
+                <div class="relative">
+                    <img src="../imagem/7193592_ra.avif" alt="TV" class="w-full h-48 object-cover">
+                    <span class="desconto">-5%</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-bold text-lg mb-2">Smart TV 55"</h3>
+                    <div class="text-yellow-500 mb-2 text-sm">⭐⭐⭐⭐⭐</div>
+                    <p class="text-gray-600 text-sm mb-2">4K Ultra HD, Smart TV</p>
+                    <p class="font-bold text-2xl text-blue-600 mb-1">R$ 1.850,00</p>
+                    <p class="text-gray-500 text-sm line-through mb-3">R$ 1.950,00</p>
+                    <button onclick="adicionarCarrinho('Smart TV 55')" 
+                            class="w-full bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4 mt-8">
-        <div class="max-w-6xl mx-auto text-center">
-            <p>&copy; 2026 Mercado Livre - Todos os direitos reservados</p>
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="font-bold text-lg mb-3">Sobre Nós</h3>
+                    <p class="text-gray-400">Sua plataforma confiável de compras online</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-3">Contato</h3>
+                    <p class="text-gray-400">Email: contato@mercadolivre.com</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-3">Redes Sociais</h3>
+                    <p class="text-gray-400">Siga-nos nas redes sociais</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 Mercado Livre - Todos os direitos reservados</p>
+            </div>
         </div>
     </footer>
 

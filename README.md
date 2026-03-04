@@ -70,6 +70,89 @@ mudarCategoria()      → Muda a cor do botão de categoria
 ```
 - Linhas de código: ~13 linhas
 
+### **Design e Interface da Aplicação**
+
+#### **Paleta de Cores Harmônica**
+
+O projeto usa cores coesas e profissionais:
+
+- **Azul Principal**: `#2563eb` - Usado em header, banner, botões e destaque de preços
+- **Azul Escuro**: `#1d4ed8` - Hover dos botões para feedback visual
+- **Cinza Claro**: `#f9fafb` - Background geral (suave e não cansativo)
+- **Cinza Médio**: `#e5e7eb` - Bordas e divisões sutis
+- **Cinza Escuro**: `#1f2937` e `#374151` - Textos principais
+- **Cinza Médio**: `#6b7280` - Textos secundários
+- **Vermelho**: `#ef4444` - Badges de desconto
+- **Âmbar**: `#fbbf24` - Estrelas de avaliação
+
+Todas as cores foram escolhidas para criar **contraste suficiente** (acessibilidade) e **harmonia visual** (cores que combinam bem).
+
+#### **Componentes Principais da Interface**
+
+1. **Header (Cabeçalho)**
+   - Fundo azul profissional (#2563eb)
+   - Logo em branco e bold (2rem)
+   - Barra de busca com input branco e botão intuitivo
+   - Sombra leve para destaque (box-shadow)
+   - Sticky no topo para fácil acesso
+
+2. **Navigation (Navegação)**
+   - Botões de categoria em cinza claro (#f3f4f6)
+   - Hover muda para cinza médio com leve elevação
+   - Classe `.ativo` ativa com cor azul quando selecionada
+   - Transições suaves (0.2s) para feedback imediato
+
+3. **Banner**
+   - Fundo azul sólido (coeso com header)
+   - Texto grande e legível
+   - Padding generoso (py-12) para respiro visual
+
+4. **Cards de Produto**
+   - Bordas leves em cinza (#e5e7eb)
+   - Sombra sutil (box-shadow: 0 1px 2px) no repouso
+   - Hover eleva a card e aumenta sombra (efeito 3D)
+   - Imagem faz zoom leve ao hover (scale 1.03)
+   - Badge de desconto posicionado absolutamente no topo-direito
+
+5. **Footer**
+   - Background cinza-escuro (#1f2937)
+   - Títulos em azul claro (#60a5fa) para harmonia
+   - Textos em cinza claro (#d1d5db) para legibilidade
+   - 3 colunas (Sobre, Contato, Redes)
+   - Responsive (1 coluna mobile, 3 desktop)
+
+#### **Hierarquia Visual**
+
+- **Tamanhos de fonte**: H1 (2rem) > H2 (1.875rem) > H3 (1.125rem) > Texto normal (1rem)
+- **Pesos de fonte**: Bold para títulos, Semibold para categorias, Regular para descrições
+- **Espaçamento**: Padding/Margin generoso para respiro entre elementos
+- **Cores**: Azul principal destaca elementos importantes, cinza para secundários
+- **Sombras**: Subtle no repouso, aumento no hover para feedback
+
+#### **Transições e Animações**
+
+- **Header buttons**: transform translateY(-1px) ao hover
+- **Category buttons**: transform translateY(-1px) + mudança de cor
+- **Product cards**: transform translateY(-2px) + shadow aumento + scale de imagem
+- **Images**: scale(1.03) ao hover para destaque
+- **Todas**: transition 0.2s a 0.3s ease (suave e rápida)
+
+#### **Responsividade**
+
+O projeto usa Tailwind CSS responsivo:
+- **Mobile**: 1 coluna de produtos, navegação em stack
+- **Tablet**: 2 colunas de produtos, navegação em linha
+- **Desktop**: 4 colunas de produtos (gap-6), grid completa
+
+#### **Acessibilidade e Usabilidade**
+
+- ✅ Contraste de cores WCAG AA (atende padrões)
+- ✅ Inputs com placeholder descritivo
+- ✅ Botões com feedback visual claro
+- ✅ Imagens com alt text para leitores de tela
+- ✅ Estrutura semântica HTML5 (header, nav, main, footer, section)
+- ✅ Focus states em navegação por teclado
+
 ### **Como você colocou o projeto no GitHub?**
 
 Segui os seguintes passos:
